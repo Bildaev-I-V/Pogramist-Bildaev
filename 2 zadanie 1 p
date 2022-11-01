@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    for (int a = 0; a<=100; a++) {
+        if (!(a % 3))
+        printf("A number is: %d\n", a);
+        }
+        return 0;
+    }
+    
+    
