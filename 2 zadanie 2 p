@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+   int a = 1;
+   int sum = 0;
+   while(a <1000)
+   {
+   if(a%7==0)
+   sum = sum + a;
+   a=a+4;
+   
+   }
+   printf("A number is: %d\n", sum);
+  
+    return 0;
+    }
+    
