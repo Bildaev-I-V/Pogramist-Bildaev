@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+int A;
+int B;
+printf ("Input A and B: ");
+scanf ("%d %d", &A, &B);
+FILE *test_file;
+test_file = fopen ("test", "w");
+while ( A <= B) {
+fprintf (test_file, "%d\n", A*3);
+A++;
+}
+fclose(test_file);
