@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+char Line [26]; // английских букв в алфавите 
+char  *ptr; // указатель указвыает на адрес в памяти 
+ptr = Line; // теперь по этому адресу находятся 26 символов
+cout << "\n"<< "Исходная строка:";
+cin >> Line; // Введи любые буквы 
+int Length = strlen(Line); 
+cout << "\n" << "Преобразованная строка: ";
+for(int z =0; z<=Length; z++)
+{
+cout << char(*(ptr+z)+1);
+}
+
+return 0;
+}
