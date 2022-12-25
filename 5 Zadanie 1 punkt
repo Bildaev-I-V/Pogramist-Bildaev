@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+void SquaredSum(){
+float a,b,c;
+cout << "Два дробных числа a и b:" << "\n";
+cin >> a >> b;
+c = (a+b)*(a+b);
+cout << "Возвращает Квадрат суммы a и b = " << c << "\n";
+}
+int main()
+{
+SquaredSum();
+return 0;
+}
