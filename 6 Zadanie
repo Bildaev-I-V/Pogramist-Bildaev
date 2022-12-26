@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+class Bucket {
+    public:
+    int volume; // объем общий
+    int used; // сколько занято? 
+    
+    void flush (){
+       used = 0;
+    }
+    int fill (int v) {
+        int range = volume - used; // сколько у нас места при нач. усл.
+        if (v<(range)) {           // налито меньше, чем есть места?
+            used = used + v;       // ДА, значит остаток места + че налили
+            return 0;
+        }
+        else {                    //  ты розлил
+            used = used+range; // и теперь сколько вошло это  занято + сколько есть места 
+            return (v-(range)); // эта строчка описывает остаток невошедшего
+        }
+    }
+    Bucket (int m_volume, int m_used){   // непонятные сложности с main
+        volume = m_volume; 
+        used = m_used;
+    }
+};
+
+int main (){
+    Bucket test_01(12, 3);
+    cout << "1) " << test_01.volume << ", " << test_01.used << "\n"; // 12, 3
+    int rest = test_01.fill(14);
+    cout << "2) " << test_01.used << ", " << rest << "\n"; // 12, 5
+    test_01.flush();
+    rest = test_01.fill(8);
+    cout << "3) " << test_01.used << ", " << rest << "\n"; // 8, 0
+    return 0;
+}
